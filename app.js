@@ -1,1 +1,2 @@
-import myTabla from "./components/my-tabla.js";
+import myHeader from "./components/my-header.js";
+import myFooter from "./components/my-footer.js";
