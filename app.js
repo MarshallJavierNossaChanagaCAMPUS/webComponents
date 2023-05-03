@@ -1,0 +1,1 @@
+import myTabla from "./components/my-tabla.js";
