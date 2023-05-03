@@ -1,0 +1,28 @@
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.father{
+    display: grid;
+    grid-template-rows: 100px;
+    width: 100% !important;
+    height: 100% !important;
+}
+.myHeader{
+    grid-column: 1 / 4;
+}
+.mySection{
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+.myNav{
+    grid-column: 3;
+    grid-row: 2 / 4;
+}
+.mySelect{
+    grid-column: 1 / 3;
+}
+.myFooter{
+    grid-column: 1 / 4;
+}

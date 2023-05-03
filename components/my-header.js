@@ -15,5 +15,4 @@ export default class myHeader extends HTMLElement {
     }
 }
 
-myHeader.components();
 customElements.define(name, myHeader)

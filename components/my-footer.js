@@ -16,5 +16,4 @@ export default class myFooter extends HTMLElement {
     }
 }
 
-myFooter.components()
 customElements.define(name, myFooter)
