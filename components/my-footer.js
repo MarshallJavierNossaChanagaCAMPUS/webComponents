@@ -1,10 +1,10 @@
-let pathName = new URL(import.meta.url).pathname;
-let name = pathName.split("/").pop().replace(".js", "")
+import config from "../components/config.js";
 
 export default class myFooter extends HTMLElement {
+    static url = import.meta.url;
     static async components(){
-        return await ( (await fetch(pathName.replace(".js", ".html"))).text())
-    }
+        return await ((await fetch(config.uri(myFooter.url))).text())
+    };
     constructor(){
         super();
         //El attachShadow aisla del resto del DOM al componente, adjunta un nuevo shadowDOM
@@ -16,4 +16,4 @@ export default class myFooter extends HTMLElement {
     }
 }
 
-customElements.define(name, myFooter)
+customElements.define(config.name(myFooter.url), myFooter)
