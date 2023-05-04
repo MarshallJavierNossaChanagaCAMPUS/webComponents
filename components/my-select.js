@@ -7,11 +7,21 @@ export default class mySelect extends HTMLElement{
     }
     constructor(){
         super();
+        
+        console.log("Etiqueta 'my-select' renderizada");
+    }
+    handleEvent(e){
+        (e.type == "click") ? this.enviarWorker() : undefined;
+    }
+    enviarWorker(){
+        console.log("Hola buenas tardes");
+    }
+    connectedCallback(){
         this.attachShadow({mode: "open"});
         Promise.resolve(mySelect.components()).then(html => {
-            this.shadowRoot.innerHTML = html
+            this.shadowRoot.innerHTML = html;
+            this.myBtns = this.shadowRoot.querySelector(".button").addEventListener("click", this.handleEvent.bind(this))
         })
-        console.log("Etiqueta 'my-select' renderizada");
     }
 }
 
