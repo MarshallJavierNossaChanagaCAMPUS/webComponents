@@ -1,4 +1,4 @@
-import config from "../components/config.js";
+import config from "../config.js";
 
 export default class mySection extends HTMLElement{
     static url = import.meta.url;

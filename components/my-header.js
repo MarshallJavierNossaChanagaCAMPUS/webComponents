@@ -1,4 +1,4 @@
-import config from "../components/config.js";
+import config from "../config.js";
 
 export default class myHeader extends HTMLElement {
     static url = import.meta.url;
@@ -15,6 +15,15 @@ export default class myHeader extends HTMLElement {
         (e.type == "click") ? this.enviarWorker(e) : undefined;
     }
     enviarWorker(){
+        const ws = new Worker("../ws.js", {type: "module"});
+
+        ws.postMessage({mensaje: "shi"});
+
+        ws.addEventListener("message", (e)=>{
+
+            ws.terminate();
+        })
+
         console.log("Soy don piola");
     }
     connectedCallback(){
